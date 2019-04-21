@@ -1,0 +1,114 @@
+<script type="text/javascript" src="/public/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    if (typeof console == "undefined") {
+        this.console = {
+            log: function (msg) {}
+        };
+    }
+    var ws, name, client_list={};
+
+    function connect(){
+        // 创建websocket
+        ws = new WebSocket("ws://"+document.domain+":2347");
+        //ws = new WebSocket("ws://cxs.siyuan666.com:2347");
+        // 当socket连接打开时，输入用户名
+        ws.onopen = onopen;
+        // 当有消息时根据消息类型显示不同信息
+        ws.onmessage = onmessage;
+        ws.onclose = function() {
+            console.log("连接关闭，定时重连");
+            connect();
+        };
+        ws.onerror = function() {
+            console.log("出现错误");
+        };
+    }
+    // 连接建立时发送登录信息
+    function onopen()
+    {
+        if(!name)
+        {
+            name = prompt('输入你的名字：', '');
+            if(!name || name=='null'){
+                name = '游客';
+            }
+        }
+        var login_data = '{"type":"login","client_name":"'+name.replace(/"/g, '\\"')+'","msg":""}';
+        console.log(login_data);
+        ws.send(login_data);
+    }
+
+    // 服务端发来消息时
+    function onmessage(e)
+    {
+        var data = eval("("+e.data+")");
+        switch(data['type']){
+            // 服务端ping客户端
+            case 'ping':
+                ws.send('{"type":"pong"}');
+                break;
+            case 'reply':
+                if(data.data != '') {
+                    var html_str = document.createElement('li');
+                    html_str.innerText = data.name + ':' + data.data;
+                    if(data.name == name){
+                        html_str.className = 'right';
+                    }else{
+                        document.getElementById("player").play();
+                        html_str.className = 'left';
+                    }
+                    document.getElementById('msg').appendChild(html_str)
+                }
+        }
+    }
+    connect();
+    $(function(){
+        $('#send_btn').click(function(){
+            //document.getElementById("player").play();
+            var msg = $('#send_msg').val();
+            if(msg != ''){
+                ws.send('{"type":"say","msg":"'+msg+'"}');
+            }
+        })
+    })
+
+</script>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .meta{
+        width:500px;
+        height:800px;
+        border-radius: 5%;
+        border:3px solid #000;
+        margin:10px auto;
+        position:relative;
+    }
+    .login_info{
+        width:100%;
+        height:40px;
+        position:absolute;
+        left:0;
+        top:0;
+        line-height:40px;
+        text-align:center;
+    }
+    li{list-style: none;text-align: left}
+    li.left{padding-left: 20px}
+    li.right{padding-left: 300px}
+</style>
+<audio style="display: none;" id="player" controls="controls" src="/4204.mp3">
+    你的浏览器不支持audio标签
+</audio>
+<div class="meta">
+    <div class="login_info">
+        <ul id="msg">
+        </ul>
+    </div>
+</div>
+<div>
+    <input id="send_msg">
+    <input type="button" id="send_btn" value="发送">
+</div>

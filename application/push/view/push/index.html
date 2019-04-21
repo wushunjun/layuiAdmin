@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chat</title>
+    <link rel="stylesheet" href="/push_static/css/chat.css">
+</head>
+<body>
+<div class="page">
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="chat-box">
+                    <div class="chats">
+                        <!--<div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title=""
+                                   data-original-title="June Lane">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>
+                                        骚年，可以交个朋友吗？ </p>
+                                    <time class="chat-time" datetime="2016-06-01T08:30">上午 8:30</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title=""
+                                   data-original-title="Edward Fletcher">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>
+                                        我有女朋友了 </p>
+                                    <time class="chat-time" datetime="2016-06-01T08:35">上午 8:35</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title=""
+                                   data-original-title="June Lane">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>
+                                        那你介意再多交一个女朋友吗？ </p>
+                                    <time class="chat-time" datetime="2016-06-01T08:40">上午 8:40</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title=""
+                                   data-original-title="Edward Fletcher">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>介意</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title=""
+                                   data-original-title="June Lane">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>那你介意我喜欢你吗？</p>
+                                    <time class="chat-time" datetime="2016-06-01T09:00">上午 9:00</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title=""
+                                   data-original-title="Edward Fletcher">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>介意</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title=""
+                                   data-original-title="June Lane">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>那你介意介意你介意我吗？</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title=""
+                                   data-original-title="Edward Fletcher">
+                                    <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/5.jpg" alt="Edward Fletcher">
+                                </a>
+                            </div>
+                            <div class="chat-body">
+                                <div class="chat-content">
+                                    <p>介意</p>
+                                    <p>不介……</p>
+                                    <p>额</p>
+                                    <p>艹</p>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="send_msg" placeholder="说点什么吧…">
+                          <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">发送</button>
+                          </span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<audio style="display: none;" id="player" controls="controls" src="/4204.mp3">
+    你的浏览器不支持audio标签
+</audio>
+</body>
+<script type="text/javascript" src="/push_static/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    if (typeof console == "undefined") {
+        this.console = {
+            log: function (msg) {}
+        };
+    }
+    var ws, name, client_list={};
+
+    function connect(){
+        // 创建websocket
+        ws = new WebSocket("ws://"+document.domain+":2346");
+        //ws = new WebSocket("ws://cxs.siyuan666.com:2347");
+        // 当socket连接打开时，输入用户名
+        ws.onopen = onopen;
+        // 当有消息时根据消息类型显示不同信息
+        ws.onmessage = onmessage;
+        ws.onclose = function() {
+            console.log("连接关闭，定时重连");
+            connect();
+        };
+        ws.onerror = function() {
+            console.log("出现错误");
+        };
+    }
+    // 连接建立时发送登录信息
+    function onopen()
+    {
+        if(!name)
+        {
+            name = prompt('输入你的名字：', '');
+            if(!name || name=='null'){
+                name = '游客';
+            }
+        }
+        var login_data = '{"type":"login","client_name":"'+name.replace(/"/g, '\\"')+'","msg":""}';
+        //console.log(login_data);
+        ws.send(login_data);
+    }
+
+    // 服务端发来消息时
+    function onmessage(e)
+    {
+        var data = eval("("+e.data+")");
+        switch(data['type']){
+            // 服务端ping客户端
+            case 'ping':
+                ws.send('{"type":"pong"}');
+                break;
+            case 'reply':
+                if(data.old_message){
+                    $.each(data.old_message,function(idx,item){
+                        var class_name = '';
+                        var user_name = '';
+                        if(item.name != name){
+                            class_name = 'chat-left';
+                            user_name = '<p style="text-align: left;color: #9c9c9c;margin-left: 20px;">'+item.name+'</p>';
+                        }
+                        var html_str = `<div class="chat ${class_name}">
+                                <div class="chat-avatar">
+                                <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title=""
+                        data-original-title="June Lane">
+                                <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/4.jpg" alt="June Lane">
+                                </a>
+                                </div>
+                                <div class="chat-body">
+                                    ${user_name}
+                                <div class="chat-content">
+                                <p>${item.message}</p>
+                                </div>
+                                </div>
+                                </div>`;
+
+                        $('.chats').append(html_str)
+                    })
+                }
+                if(data.data) {
+                    var class_name = '';
+                    var user_name = '';
+                    if(data.name != name){
+                        document.getElementById("player").play();
+                        class_name = 'chat-left';
+                        user_name = '<p style="text-align: left;color: #9c9c9c;margin-left: 20px;">'+data.name+'</p>';
+                    }
+                    var html_str = `<div class="chat ${class_name}">
+                            <div class="chat-avatar">
+                            <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title=""
+                    data-original-title="June Lane">
+                            <img src="http://cdn.admui.com/demo/basic/2.0.0/images/portraits/4.jpg" alt="June Lane">
+                            </a>
+                            </div>
+                            <div class="chat-body">
+                                ${user_name}
+                            <div class="chat-content">
+                            <p>${data.data}</p>
+                    </div>
+                    </div>
+                    </div>`;
+
+                    $('.chats').append(html_str)
+                }
+        }
+    }
+    connect();
+    $(function(){
+        $('.btn-primary').click(function(){
+            var msg = $('#send_msg').val();
+            if(msg != ''){
+                ws.send('{"type":"say","msg":"'+msg+'"}');
+                $('#send_msg').val('');
+            }
+        })
+        $('body').keypress(function(e){
+            var key=e.which;
+            if(key==13){
+                $('.btn-primary').click();
+            }
+        })
+    })
+
+</script>
+</html>
